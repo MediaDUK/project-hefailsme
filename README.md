@@ -13,3 +13,13 @@ $ npm run dev
 ```
 
 3. Open Browser to [localhost:5000](http://localhost:5000/).
+
+//SITE LAYOUT
+
+Navbar (MAIN/ABOUT/MEDIA/TOUR/MERCH/CONTACT)
+   
+
+    
+
+  
+
