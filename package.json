@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "dev": "./node_modules/nodemon/bin/nodemon.js index.js",
+    "dev": "cross-env ./node_modules/nodemon/bin/nodemon.js index.js",
     "test": "node test.js"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
     "sequelize": "^4.37.6"
   },
   "devDependencies": {
+    "cross-env": "^5.1.4",
     "nodemon": "^1.17.3",
     "request": "^2.81.0",
     "tape": "^4.7.0"
