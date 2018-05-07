@@ -2,7 +2,7 @@
   "development": {
     "username": "USER_NAME",
     "password": "PASSWORD",
-    "database": "DB",
+    "database": "DB_NAME",
     "host": "HOST",
     "dialect": "mysql2"
   },
