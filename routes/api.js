@@ -6,7 +6,7 @@ module.exports = function (app) {
   app.post('/email-subscription', (err, req, res) => {
     if (err) throw err
 
-    // insert email into database with sequlize
+    // insert email into database with sequelize
 
     // on succesfull submission
     var success = true
