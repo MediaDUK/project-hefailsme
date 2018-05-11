@@ -1,0 +1,8 @@
+
+var sequelizedConfig = {
+  'migrations-path': 
+  'models-path':
+  'config'
+};
+
+module.exports = sequelizedConfig
