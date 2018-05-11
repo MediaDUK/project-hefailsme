@@ -5,7 +5,6 @@ module.exports = function (app) {
    //send email to database
   app.post('/email-subscription', (err, req, res) => {
     if (err) throw err
-
     // insert email into database with sequelize
 
     // on succesfull submission
@@ -16,4 +15,10 @@ module.exports = function (app) {
 
   })
 
-};
+
+  // store submissions from contact page in database
+  app.post('/contact-submit', (req, res) => {
+    console.log("newSubmission: " + req.body)
+    res.json(true)
+  })
+}

@@ -31,7 +31,7 @@ sequelize
   )
   .then(emails => {
     emails.forEach((row, i) => {
-      console.log(row[i].email)
+      // console.log(row[i].email)
     });
   })
 
