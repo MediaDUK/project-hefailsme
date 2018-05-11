@@ -60,3 +60,5 @@ typings/
 .DS_Store
 README.txt
 src_files
+sequelizerc.txt
+src_files

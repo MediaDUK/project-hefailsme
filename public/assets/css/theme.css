@@ -214,11 +214,11 @@ section {
 	font-size: 23px;
 	font-weight: 600;
 }
-.service-sec p {
+/* .service-sec p {
 	line-height: 22px;
 	margin-top: 13px;
 	padding: 0 21px;
-}
+} */
 .service-sec .service-block {
 	margin-top: 30px;
 }

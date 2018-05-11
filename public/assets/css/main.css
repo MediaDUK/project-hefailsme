@@ -113,7 +113,15 @@
         border-top: 1px solid #ddd;
     }
 }
+/*TOUR GALLERY CSS*/
 
+.gal {
+    -webkit-column-count: 3;
+    /* Chrome, Safari, Opera */
+    -moz-column-count: 3;
+    /* Firefox */
+    column-count: 3;
+}
 /* MEDIA PAGE CSS */
 
 .image-flip:hover .backside,
@@ -150,6 +158,7 @@
     position: relative;
     -webkit-transform: rotateY(0deg);
     -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
     z-index: 2;
     margin-bottom: 30px;
 }
@@ -252,4 +261,78 @@ a:hover,a:focus{
 
 textarea.form-control{
     height:100px;
+}
+
+/* set video aspect ratio and vertically center */
+
+.vimeo-wrapper {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background: #111;
+    /* position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden; */
+}
+
+.vimeo-wrapper iframe {
+    width: 100vw;
+    height: 96.25vw;
+    /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+    min-height: 110vh;
+    min-width: 177.77vh;
+    /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nav-icon {
+    width: 70px;
+}
+
+.sps--blw .nav-icon path.cls-1 {
+    fill: #000000;
+}
+
+.sps--abv .nav-icon path.cls-1 {
+    fill: #ffffff;
+}
+
+#band-logo {
+    width: 90%;
+    max-width: 8000px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 100
+}
+
+.header-vid{
+    overflow: hidden;
+}
+.bg-img-header {
+    height: 90vh;
+}
+.bg-img-header.contact {
+    background: url(/assets/images/contact-page.JPG) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+header .header-text h1 {
+    padding-top: 100px;
+    text-align: left;
+    color: #ffffff;
 }
