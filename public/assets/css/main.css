@@ -320,3 +320,19 @@ textarea.form-control{
 .header-vid{
     overflow: hidden;
 }
+.bg-img-header {
+    height: 90vh;
+}
+.bg-img-header.contact {
+    background: url(/assets/images/contact-page.JPG) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+header .header-text h1 {
+    padding-top: 100px;
+    text-align: left;
+    color: #ffffff;
+}
