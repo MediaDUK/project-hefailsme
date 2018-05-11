@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const errorHandler = require('error-handler');
 const mysql = require('mysql2');
 const Sequelize = require('sequelize');
-const PORT = process.env.NODE_PORT || 3000
+const PORT = process.env.NODE_PORT || 8080
 const db = require('./models')
 
 const app = express();
@@ -25,7 +25,10 @@ app.engine('.hbs', hb({
   extname: '.hbs'
 }))
 
-// // get all emails
+// remote connection string for JawDB
+var sequelize = new Sequelize('mysql://lv2n8lbwqo7dqjok:azqw5bjnl3ukmgbs@i943okdfa47xqzpy.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/jgy2mx5qwhjczyqk');
+
+// get all emails
 // sequelize
 //   .query(
 //     'SELECT * FROM emails'
@@ -37,6 +40,25 @@ app.engine('.hbs', hb({
 //   })
 
 
+// making model of email table in JawBD 
+// var Email = sequelize.define('email', {
+//   email: {
+//     type: Sequelize.STRING,
+//     field: 'email' // Will result in an attribute that is firstName when user facing but first_name in the database
+//   }
+// });
+// var emailToSend = 'example@site.com'
+// sequelize.sync()
+//   .then( () => Email.create({
+//     email: emailToSend
+//   }))
+//   .then(email => {
+//     console.log(email.toJSON());
+//   });
+
+
+
+
 // Routes
 // =============================================================
 require("./routes/api.js")(app);
@@ -46,6 +68,6 @@ require("./routes/html.js")(app);
 // =============================================================
 db.sequelize.sync().then(function () {
   app.listen(PORT, function () {
-    console.log("App listening on PORT " + PORT);
+    console.log("App listening on http://localhost:" + PORT);
   });
 });

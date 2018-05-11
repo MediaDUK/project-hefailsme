@@ -1,6 +1,5 @@
-# hefailsme
+# project-hefailsme
 
-<<<<<<< HEAD
 ## Running Locally
 
 1. Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cli.heroku.com/) installed.
@@ -34,7 +33,3 @@ Suggestions:
 3. Incorporate Authentication (JSON Web Tokens, Sessions, Etc.)
 4. Use an existing public dataset to power the database
 5. Create a migration strategy for sharing data across team members.
-=======
-
-1. make db named jgy2mx5qwhjczyqk
->>>>>>> develop
