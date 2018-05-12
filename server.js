@@ -7,7 +7,7 @@ const errorHandler = require('error-handler');
 const mysql = require('mysql2');
 const Sequelize = require('sequelize');
 const PORT = process.env.NODE_PORT || 8080
-const db = require('./models')
+// const db = require('./models')
 
 const app = express();
 // const sequelize = new Sequelize()
@@ -66,8 +66,8 @@ require("./routes/html.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync().then(function () {
+// db.sequelize.sync().then(function () {
   app.listen(PORT, function () {
     console.log("App listening on http://localhost:" + PORT);
   });
-});
+// });
