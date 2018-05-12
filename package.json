@@ -8,14 +8,13 @@
   "main": "server.js",
   "scripts": {
     "dev": "cross-env ./node_modules/nodemon/bin/nodemon.js server.js",
-    "test": "node test.js"
+    "test": "node test.js",
+    "author": "MediaDUK"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
     "bootstrap": "^4.1.1",
     "dotenv": "^5.0.1",
-    "ejs": "^2.5.6",
-    "error-handler": "^1.0.0",
     "express": "^4.15.2",
     "express-handlebars": "^3.0.0",
     "mysql2": "^1.5.3",
@@ -23,6 +22,7 @@
   },
   "devDependencies": {
     "cross-env": "^5.1.4",
+    "morgan": "^1.9.0",
     "nodemon": "^1.17.3",
     "request": "^2.81.0",
     "sequelize-cli": "^4.0.0",
