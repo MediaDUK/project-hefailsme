@@ -17,7 +17,7 @@ if (config.use_env_variable) {
   });
 }
 
-console.log("GET TO KNOW THIS \n\n\n", sequelize)
+// console.log("GET TO KNOW THIS \n\n\n", sequelize)
 
 fs
   .readdirSync(__dirname)

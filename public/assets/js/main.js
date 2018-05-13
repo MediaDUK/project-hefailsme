@@ -2,10 +2,11 @@ $(document).ready(function () {
 
   // popup window on homepage
   function startPopup() {
+    console.log('pop started')
     var time = 5000
     setTimeout(function () {
       var $EmailModal = $('#emailSubscription')
-      EmailModal.modal('show')
+      $EmailModal.modal('show')
     }, time);
   }
   startPopup()
@@ -13,61 +14,67 @@ $(document).ready(function () {
   // posting the data to JAW_DB on heroku
   function postEmail(email_to_post) {
     console.log('Posting to database: ' + email_to_post)
-    // create ajax object
-    var request = $.ajax({
-      url: '/email-subscription',
-      method: "POST",
-      data: {
-        email: email_to_post
-      },
-      dataType: "html"
-    });
+    $.ajax({
+        method: 'POST',
+        url: '/email-subscription',
+        data: email_to_post
+        // {
+        //   'name': email_to_post
+        // }
+      })
+      .done(function (res) {
+        console.log('SUCCESS =================', res);
+        if (res == 'OK') {
+          var $email = $('#email')
+          $email.val('')
+          var $EmailModal = $('#emailSubscription')
+          // if (!$('#email_sign_up').hasClass('hidden')) {
+          //   hideError('#email_sign_up')
 
-    // handle success
-    request.done(function (msg) {
-      console.log('Message from post response: ' + msg)
-      // close modal after success from jawsbd posts
-      var $EmailModal = $('#emailSubscription')
-      EmailModal.modal('hide')
-    });
+          // }
+          setTimeout(function () {
+            // close modal after success from jawsbd post          
+            $EmailModal.modal('hide')
+          }, 1000)
 
-    // handle error
-    request.fail(function (jqXHR, textStatus) {
-      alert("Request failed: " + textStatus);
-    });
+        }
+      })
+      .fail(function (err) {
+        console.log('ERROR ======================', err)
+        // console.log('ERROR:', err)
+        // console.log(err.responseText)
+        // if (err.responseText == 'Bad Request') {
+        //   showError('#email_sign_up')
+        // }
+
+      })
   }
 
+
   // click event for email form / button
-  $('#subscriptionButton').on('click', function (event) {
+  var submitBtn_popup = $('#subscriptionButton')
+  submitBtn_popup.on('click', function (event) {
     event.preventDefault()
     var $email = $('#email')
     var emailData = $email.val().trim() // string
-    postEmail(emailData)
+     postEmail(emailData)
+    // if (emailData != '' || emailData != undefined) {
+    //   postEmail(emailData)
+    //   if (!$('#email_sign_up').hasClass('hidden')) {
+    //     hideError('#email_sign_up')
+    //   }
+    // } else {
+    //   showError('#email_sign_up')
+    // }
   });
 
+  function showError(target_class) {
+    console.log('Show error')
+    $(target_class).removeClass('hidden')
+  }
 
-
-  // click event for contact form / button
-  $("#contact-submit").on("click", function (event) {
-    event.preventDefault()
-
-    // grab the form elements
-    var newSubmission = {
-      name: $("#exampleInputName2").val().trim(),
-      email: $("#exampleInputEmail2").val().trim(),
-      message: $("#exampleInputMessage2").val().trim()
-    }
-
-    console.log(newSubmission)
-
-    $.post("/contact-submit", newSubmission, function (data) {
-      // Clear the form when submitting
-      if (data) {
-        console.log("success")
-        $("#exampleInputName2").val("")
-        $("#exampleInputEmail2").val("")
-        $("#exampleInputMessage2").val("")
-      }
-    })
-  })
-})
+  function hideError(target_class) {
+    console.log('hiding error')
+    $(target_class).addClass('hidden')
+  }
+});

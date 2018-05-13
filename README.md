@@ -33,3 +33,17 @@ Suggestions:
 3. Incorporate Authentication (JSON Web Tokens, Sessions, Etc.)
 4. Use an existing public dataset to power the database
 5. Create a migration strategy for sharing data across team members.
+
+Tour Data:
+```
+INSERT INTO Tours (id, date, venue, city, state)
+VALUES (1,"1.17.14","BOMBAY","VENTURA", "CA"),
+(2,"9.20.14","BOMBAY","VENTURA", "CA"),
+(3,"4.20.15","SLIDEBAR","FULLERTON", "CA"),
+(4,"8.10.15","DIPIAZZAS","LONG BEACH", "CA"),
+(5,"8.14.15","LANCASTER MOOSE LODGE","LANCASTER", "CA"),
+(6,"9.24.15","PROGRAMME","FULLERTON", "CA"),
+(7,"9.25.15","BONNERHAUS","NORTH HOLLYWOOD","CA"),
+(8,"4.16.16","LA DOLCE VITA","OXNARD", "CA"),
+(9,"12.28.16","4TH ST VINE","LONG BEACH", "CA");
+```
