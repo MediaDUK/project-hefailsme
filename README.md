@@ -33,3 +33,6 @@ Suggestions:
 3. Incorporate Authentication (JSON Web Tokens, Sessions, Etc.)
 4. Use an existing public dataset to power the database
 5. Create a migration strategy for sharing data across team members.
+
+
+# Seeder queries
