@@ -13,7 +13,12 @@ module.exports = function (app, db) {
       }
     });
   })
-  
+  // login
+  app.get('/login', (req, res) => {
+    res.render('login')
+  })
+
+
   // about
   app.get('/about', (req, res) => {
     res.render('about')
