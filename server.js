@@ -15,6 +15,8 @@ const app = express();
 app.set('port', PORT)
 app.set('view engine', '.hbs')
 app.use(morgan('combined'))
+// use app setting to call models from 
+app.set('models', require('./models'));
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended: true}));
 // parse application/json

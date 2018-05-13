@@ -1,38 +1,40 @@
 // Routes database get and posts
 // =============================================================
-module.exports = function (app, db) {
-   //send email to database
-  app.post('/email-subscription', (err, req, res) => {
-    if (err) throw err
-    // insert email into database with sequelize
+module.exports = function (app) {
+  var Emails = app.get('models').Emails;
+  //send email to database
+  app.post('/email-subscription', function (req, res) {
 
-    // on succesfull submission
-    var success = true
-    if (success) {
-      res.send(200)
-    }
-
-
-//sends email to db
-// var emailToSend = 'example@site.com'
-// sequelize.sync()
-//   .then( () => Email.create({
-//     email: emailToSend
-//   }))
-//   .then(email => {
-//     console.log(email.toJSON());
-//   });
-
-
-// // get all emails
-// db.Emails.query(
-//     'SELECT * FROM emails'
-//   )
-//   .then(emails => {
-//     emails.forEach((row, i) => {
-//       console.log(row[i].email)
-//     });
-//   })
+    console.log('EMAIL \n\n\n\n' + req.body.email)
+    Emails.create({
+        email: req.body[0]
+      })
+      .then( function(email) {
+          res.sendStatus(200)
+      })
+      .catch(function (err) {
+        console.log('GENERAL ERROR ======')
+        console.log(err)
+        // if (err.value == null) {
+        //   res.sendStatus(400)
+        // }
+        // console.log(err)
+      })
+      // Sequelize.ValidationError
+      // .catch(SequelizeValidationError, function (err) {
+      //   console.log('SequelizeValidationError: ERROR ======')
+      //   console.log(err)
+      //  });
+        
+    // // get all emails
+    // db.Emails.query(
+    //     'SELECT * FROM emails'
+    //   )
+    //   .then(emails => {
+    //     emails.forEach((row, i) => {
+    //       console.log(row[i].email)
+    //     });
+    //   })
 
 
   })
