@@ -12,6 +12,7 @@ if (config.use_env_variable) {
 } else {
   var sequelize = new Sequelize(process.env.JAWSDB_DATABASE_NAME, process.env.JAWSDB_USERNAME, process.env.JAWSDB_PASSWORD, {
     host: '127.0.0.1',
+    port: process.env.JAWSDB_PORT,
     dialect: 'mysql'
   });
 }
