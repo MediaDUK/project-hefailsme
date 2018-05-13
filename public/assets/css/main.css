@@ -296,7 +296,12 @@ textarea.form-control{
 .nav-icon {
     width: 70px;
 }
-
+nav.sps--abv {
+    background: #000000 !important;
+}
+nav.sps--blw {
+    background: #ffffff !important;
+}
 .sps--blw .nav-icon path.cls-1 {
     fill: #000000;
 }
