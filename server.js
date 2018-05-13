@@ -25,11 +25,6 @@ app.engine('.hbs', hb({
   extname: '.hbs'
 }))
 
-<<<<<<< HEAD
-// remote connection string for JawDB
-// var sequelize = new Sequelize('mysql://lv2n8lbwqo7dqjok:azqw5bjnl3ukmgbs@i943okdfa47xqzpy.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/jgy2mx5qwhjczyqk');
-=======
->>>>>>> develop
 
 
 
