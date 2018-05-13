@@ -40,9 +40,10 @@ module.exports = function (app) {
   })
 
 
-  // store submissions from contact page in database
-  app.post('/contact-submit', (req, res) => {
-    console.log("newSubmission: " + req.body)
-    res.json(true)
-  })
+  // // store submissions from contact page in database
+  // app.post('/contact-submit', (req, res) => {
+  //   console.log("newSubmission: " + req.body)
+  //   res.json(true)
+  // })
 }
+
