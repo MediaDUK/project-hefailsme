@@ -1,5 +1,4 @@
 'use strict';
-
 var fs = require('fs');
 var path = require('path');
 var Sequelize = require('sequelize');
@@ -8,19 +7,16 @@ var env = process.env.NODE_ENV || 'development';
 var config = require(__dirname + '/../config/config.json')[env];
 var db = {};
 
-// if (config.use_env_variable) {
-//   var sequelize = new Sequelize(process.env[config.use_env_variable], config);
-// } else {
-//   var sequelize = new Sequelize(config.database, config.username, config.password, config.port, config.dialect);
-// }
+if (config.use_env_variable) {
+  var sequelize = new Sequelize(process.env[config.use_env_variable], config);
+} else {
+  var sequelize = new Sequelize(process.env.JAWSDB_DATABASE_NAME, process.env.JAWSDB_USERNAME, process.env.JAWSDB_PASSWORD, {
+    host: '127.0.0.1',
+    dialect: 'mysql'
+  });
+}
 
-// const sequelize = new Sequelize('mysql://lv2n8lbwqo7dqjok:azqw5bjnl3ukmgbs@i943okdfa47xqzpy.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/jgy2mx5qwhjczyqk');
-
-const sequelize = new Sequelize(process.env.JAWSDB_DATABASE_NAME, process.env.JAWSDB_USERNAME, process.env.JAWSDB_PASSWORD, {
-  host: process.env.JAWSDB_HOST,
-  dialect: 'mysql'
-});
-
+console.log("GET TO KNOW THIS \n\n\n", sequelize)
 
 fs
   .readdirSync(__dirname)
@@ -29,6 +25,7 @@ fs
   })
   .forEach(file => {
     var model = sequelize['import'](path.join(__dirname, file));
+    console.log(model.name)
     db[model.name] = model;
   });
 

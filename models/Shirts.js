@@ -1,7 +1,5 @@
-// var db = require("../models");
-// making model of email table in JawBD 
 module.exports = function (sequelize, DataType) {
-  var Shirts = sequelize.define('shirts', {
+  var Shirts = sequelize.define('Shirts', {
     id: {
       type: DataType.INTEGER,
       primaryKey: true,

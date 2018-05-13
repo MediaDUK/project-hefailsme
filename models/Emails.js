@@ -1,11 +1,9 @@
-
-// var db = require("../models");
 module.exports = function (sequelize, DataType) {
-  var Email = sequelize.define('email', {
+  var Emails = sequelize.define('Emails', {
     email: {
       type: DataType.STRING,
       field: 'email'
     }
   });
-  return Email;
+  return Emails;
 };
