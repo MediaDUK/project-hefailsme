@@ -1,7 +1,7 @@
 // Routes database get and posts
 // =============================================================
 module.exports = function (app, db) {
-   //send email to database
+  //send email to database
   app.post('/email-subscription', (err, req, res) => {
     if (err) throw err
     // insert email into database with sequelize
@@ -13,34 +13,35 @@ module.exports = function (app, db) {
     }
 
 
-//sends email to db
-// var emailToSend = 'example@site.com'
-// sequelize.sync()
-//   .then( () => Email.create({
-//     email: emailToSend
-//   }))
-//   .then(email => {
-//     console.log(email.toJSON());
-//   });
+    //sends email to db
+    // var emailToSend = 'example@site.com'
+    // sequelize.sync()
+    //   .then( () => Email.create({
+    //     email: emailToSend
+    //   }))
+    //   .then(email => {
+    //     console.log(email.toJSON());
+    //   });
 
 
-// // get all emails
-// db.Emails.query(
-//     'SELECT * FROM emails'
-//   )
-//   .then(emails => {
-//     emails.forEach((row, i) => {
-//       console.log(row[i].email)
-//     });
-//   })
+    // // get all emails
+    // db.Emails.query(
+    //     'SELECT * FROM emails'
+    //   )
+    //   .then(emails => {
+    //     emails.forEach((row, i) => {
+    //       console.log(row[i].email)
+    //     });
+    //   })
 
 
   })
 
 
-  // store submissions from contact page in database
-  app.post('/contact-submit', (req, res) => {
-    console.log("newSubmission: " + req.body)
-    res.json(true)
-  })
+  // // store submissions from contact page in database
+  // app.post('/contact-submit', (req, res) => {
+  //   console.log("newSubmission: " + req.body)
+  //   res.json(true)
+  // })
 }
+

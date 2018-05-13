@@ -1,7 +1,7 @@
 // var db = require("../models");
 // Routes
 // =============================================================
-module.exports = function (app) {
+module.exports = function (app, db) {
   // home
   app.get('/', (req, res, next) => {
     res.render('home', {
@@ -13,6 +13,7 @@ module.exports = function (app) {
       }
     });
   })
+  
   // about
   app.get('/about', (req, res) => {
     res.render('about')
@@ -27,10 +28,18 @@ module.exports = function (app) {
   app.get('/merch', (req, res) => {
     res.render('merch')
   })
-  //tour
+
+  //tour + populate tour schedule
   app.get('/tour', (req, res) => {
-    res.render('tour')
+    db.Tour.findAll().then(function (dbUser) {
+      var events = {
+        dbUser: dbUser
+      }
+      console.log(events)
+      res.render('tour', events)
+    })
   })
+  
   // contact
   app.get('/contact', (req, res) => {
     res.render('contact')
