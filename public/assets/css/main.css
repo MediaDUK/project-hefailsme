@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'goudy_old_styleregular';
+    src: url('../fonts/goudy_old_style_regular-webfont.woff2') format('woff2'), url('../fonts/goudy_old_style_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+    overflow-x: hidden;
+}
 /* our custom   */ 
 
 .video-header {
@@ -297,13 +308,13 @@ textarea.form-control{
     width: 70px;
 }
 nav.sps--abv {
-    background: #000000 !important;
+    background: #1b1b1b !important;
 }
 nav.sps--blw {
     background: #ffffff !important;
 }
 .sps--blw .nav-icon path.cls-1 {
-    fill: #000000;
+    fill: #1b1b1b;
 }
 
 .sps--abv .nav-icon path.cls-1 {
@@ -319,7 +330,7 @@ nav.sps--blw {
     left: 0;
     bottom: 0;
     right: 0;
-    z-index: 100
+    z-index: 2;
 }
 
 .header-vid{
@@ -513,4 +524,94 @@ form.login-form {
     .vid-info .acronym {
         display: none;
     }
+}
+
+
+h1 {
+
+    font-size: 28px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 100;
+    line-height: 26.4px;
+}
+
+h3 {
+    font-size: 18px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 100;
+    line-height: 15.4px;
+}
+
+
+
+section.workin-one {
+    padding: 100px 0;
+        background: url(../images/main-page/john-marcus.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+}
+
+footer.footer {
+    color: #ffffff;
+    background: #1b1b1b;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+.modal-close > span {
+    color: #1b1b1b;
+}
+.modal-close {
+    color: #ffffff;
+}
+button.close {
+    padding: 0;
+    background-color: #ffffff;
+    border: 0;
+    -webkit-appearance: none;
+}
+button#subscriptionButton {
+    background: #fff;
+    color: #1b1b1b;
+    border-radius: 0;
+    outline: 0;
+    display: block;
+    border: none;
+    width: 200px;
+    margin: 0 auto;
+}
+.popupsignup .modal-content {
+    background: #1b1b1b;
+    color: #ffffff;
+}
+input#email {
+    border-radius: 0;
+    padding: .7rem;
+}
+
+.header-vid {
+    overflow-x: hidden;
+}
+
+
+section {
+    padding: 100px 0;
+}
+
+
+blockquote.blockquote {
+    color: #fff;
+    font-size: 50px;
+}
+
+.max-400 {
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 2rem;
 }
