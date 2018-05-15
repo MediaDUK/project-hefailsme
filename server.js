@@ -11,7 +11,7 @@ const db = require('./models')
 
 const app = express();
 
-// Configs 
+// middleware
 app.set('port', PORT)
 app.set('view engine', '.hbs')
 app.use(morgan('combined'))
