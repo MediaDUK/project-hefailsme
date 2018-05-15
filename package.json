@@ -17,6 +17,7 @@
     "dotenv": "^5.0.1",
     "express": "^4.15.2",
     "express-handlebars": "^3.0.0",
+    "jquery-validation": "^1.17.0",
     "mysql2": "^1.5.3",
     "sequelize": "^4.37.6"
   },

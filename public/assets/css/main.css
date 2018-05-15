@@ -453,7 +453,10 @@ form.login-form {
     margin-top: 20px;
     border-radius: 3px;
 }
-
+.hidden {
+    opacity: 0;
+    transition: .3s opacity;
+}
 .banner-text p {
     color: #fff;
 }

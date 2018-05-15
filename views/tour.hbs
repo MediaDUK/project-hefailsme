@@ -3,13 +3,14 @@
   <div class="container">
     <div class="panel panel-default">
       <div class="panel-heading">
+
         <h1>TOUR</h1>
         <hr>
         <img class="center-pic" style="width:50%; height:50%" src="/assets/images/tour-page/12-28-16-4th-St-Vine.jpg"
         <br>
         <H3>PAST SHOWS</H3>
       </div>
-      <div class="thead">
+      {{!-- <div class="thead">
 
         <div class="row tr">
           <div class="col-sm-3 col-xs-3 td">
@@ -23,120 +24,28 @@
           </div>
         </div>
 
-      </div>
+      </div> --}}
 
       <div class="table-responsive">
-        <div class="tbody">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Venue</th>
+              <th scope="col">City/State</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each dbUser}}
+            <tr>
+              <td>{{this.date}}</td>
+              <td>{{this.venue}}</td>
+              <td>{{this.city}}, {{this.state}}</td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
 
-          <div class="row tr click-cursor">
-            <div class="col-sm-3 td">
-              1.17.14
-            </div>
-            <div class="col-sm-5 td status">
-              BOMBAY
-            </div>
-            <div class="col-sm-4 td">
-              VENTURA, CA
-            </div>
-          </div>
-
-          <div class="row tr click-cursor">
-            <div class="col-sm-3 td">
-              9.20.14
-            </div>
-            <div class="col-sm-5 td status">
-              BOMBAY
-            </div>
-            <div class="col-sm-4 td">
-              VENTURA, CA
-            </div>
-          </div>
-
-          <div class="row tr click-cursor">
-            <div class="col-sm-3 td">
-              4.20.15
-            </div>
-            <div class="col-sm-5 td status">
-              SLIDEBAR
-            </div>
-            <div class="col-sm-4 td">
-              FULLERTON, CA
-            </div>
-          </div>
-
-          <div class="row tr click-cursor">
-            <div class="col-sm-3 td">
-              8.10.15
-            </div>
-            <div class="col-sm-5 td status">
-              DIPIAZZA'S
-            </div>
-            <div class="col-sm-4 td">
-              LONG BEACH, CA
-            </div>
-          </div>
-
-          <div class="row tr click-cursor">
-            <div class="col-sm-3 td">
-              8.14.15
-            </div>
-            <div class="col-sm-5 td status">
-              LANCASTER MOOSE LODGE
-            </div>
-            <div class="col-sm-4 td">
-              LANCASTER, CA
-            </div>
-          </div>
-
-          <div class="row tr click-cursor">
-            <div class="col-sm-3 td">
-              9.24.15
-            </div>
-            <div class="col-sm-5 td status">
-              PROGRAMME
-            </div>
-            <div class="col-sm-4 td">
-              FULLERTON, CA
-            </div>
-          </div>
-
-          <div class="row tr click-cursor">
-            <div class="col-sm-3 td">
-              9.25.15
-            </div>
-            <div class="col-sm-5 td status">
-              BONNERHAUS
-            </div>
-            <div class="col-sm-4 td">
-              NORTH HOLLYWOOD, CA
-            </div>
-          </div>
-
-          <div class="row tr click-cursor">
-            <div class="col-sm-3 td">
-              4.16.16
-            </div>
-            <div class="col-sm-5 td status">
-              LA DOLCE VITA
-            </div>
-            <div class="col-sm-4 td">
-              OXNARD, CA
-            </div>
-          </div>
-
-          <div class="row tr click-cursor">
-            <div class="col-sm-3 td">
-              12.28.16
-            </div>
-            <div class="col-sm-5 td status">
-              4TH ST VINE
-            </div>
-            <div class="col-sm-4 td">
-              LONG BEACH, CA
-            </div>
-          </div>
-
-        </div>
       </div>
     </div>
 </section>
