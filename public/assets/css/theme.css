@@ -15,7 +15,9 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5, 
+h6,
+h7 {
 	font-family: goudy-old-style, serif;
 	font-style: normal;
 	font-weight: 100;
@@ -31,6 +33,13 @@ h6 {
 	font-size: 10px;
 	text-align: center;
 }
+
+h7 {
+	font-size: 8px;
+	text-align: center;
+}
+
+
 
 p {
 	font-family: goudy-old-style, serif;
