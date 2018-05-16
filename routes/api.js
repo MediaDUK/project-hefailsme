@@ -4,10 +4,10 @@ module.exports = function (app) {
   var Emails = app.get('models').Emails;
   //send email to database
   app.post('/email-subscription', function (req, res, next) {
-
+    
     console.log('EMAIL \n\n\n\n' + req.body.email)
     Emails.create({
-        email: req.body[0]
+        email: req.body.email
       })
       .then( function(email) {
           res.sendStatus(200)

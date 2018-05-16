@@ -17,10 +17,9 @@ $(document).ready(function () {
     $.ajax({
         method: 'POST',
         url: '/email-subscription',
-        data: email_to_post
-        // {
-        //   'name': email_to_post
-        // }
+        data: {
+          'email': email_to_post
+        }
       })
       .done(function (res) {
         console.log('SUCCESS =================', res);
@@ -57,7 +56,7 @@ $(document).ready(function () {
     event.preventDefault()
     var $email = $('#email')
     var emailData = $email.val().trim() // string
-     postEmail(emailData)
+    postEmail(emailData)
     // if (emailData != '' || emailData != undefined) {
     //   postEmail(emailData)
     //   if (!$('#email_sign_up').hasClass('hidden')) {
