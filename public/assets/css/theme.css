@@ -58,7 +58,9 @@ ul {
 
 .center-pic {
     margin: auto;    
-    display: block;
+	display: block;
+	border: 2px;
+	border-color: solid black;
 }
 
 .parallax-section {

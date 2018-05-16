@@ -43,5 +43,5 @@
     "express",
     "mysql"
   ],
-  "license": "MIT"
+  "license": "ISC"
 }
