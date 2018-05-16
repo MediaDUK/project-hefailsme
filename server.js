@@ -6,12 +6,16 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan')
 const mysql = require('mysql2');
 const Sequelize = require('sequelize');
+const passport = require('passport')
+const session = require('express-session')
 const PORT = process.env.NODE_PORT || 8080
 const db = require('./models')
 
+
+
 const app = express();
 
-// Configs 
+// middleware
 app.set('port', PORT)
 app.set('view engine', '.hbs')
 app.use(morgan('combined'))
@@ -21,6 +25,14 @@ app.set('models', require('./models'));
 app.use(bodyParser.urlencoded({extended: true}));
 // parse application/json
 app.use(bodyParser.json());
+// For Passport
+app.use(session({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: true // session secret
+}));
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
 app.use(express.static(__dirname + '/public'))
 app.engine('.hbs', hb({
   defaultLayout: 'main',
@@ -47,4 +59,7 @@ db.sequelize.sync().then(function () {
   app.listen(PORT, function () {
     console.log("App listening on http://localhost:" + PORT);
   });
+}).catch(function (err) {
+  console.log(err, "Something went wrong with the Database Update!")
+
 });

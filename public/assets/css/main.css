@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'goudy_old_styleregular';
+    src: url('../fonts/goudy_old_style_regular-webfont.woff2') format('woff2'), url('../fonts/goudy_old_style_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+    overflow-x: hidden;
+}
 /* our custom   */ 
 
 .video-header {
@@ -174,9 +185,9 @@
     -o-transform: rotateY(-180deg);
     -ms-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
-    -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    /* -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
     -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
-    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158); */
 }
 
 .frontside,
@@ -204,11 +215,12 @@
 
 .album-img {
     width: 100%;
+    height: 100%;
 }
 
 iframe {
     width: 1000px;
-    height: 100%;
+    height: 92%;
     max-width: 100%;
     max-height: 100%;
 }
@@ -297,13 +309,13 @@ textarea.form-control{
     width: 70px;
 }
 nav.sps--abv {
-    background: #000000 !important;
+    background: #1b1b1b !important;
 }
 nav.sps--blw {
     background: #ffffff !important;
 }
 .sps--blw .nav-icon path.cls-1 {
-    fill: #000000;
+    fill: #1b1b1b;
 }
 
 .sps--abv .nav-icon path.cls-1 {
@@ -319,7 +331,7 @@ nav.sps--blw {
     left: 0;
     bottom: 0;
     right: 0;
-    z-index: 100
+    z-index: 2;
 }
 
 .header-vid{
@@ -459,4 +471,148 @@ form.login-form {
 }
 .banner-text p {
     color: #fff;
+}
+
+
+
+/* Full Backgroudn video */
+
+.video-background {
+    background: #000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -99;
+}
+
+.video-foreground,
+.video-background iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .video-foreground {
+        height: 300%;
+        top: -100%;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .video-foreground {
+        width: 300%;
+        left: -100%;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .vid-info {
+        width: 50%;
+        padding: .5rem;
+    }
+    .vid-info h1 {
+        margin-bottom: .2rem;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .vid-info .acronym {
+        display: none;
+    }
+}
+
+
+h1 {
+
+    font-size: 28px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 100;
+    line-height: 26.4px;
+}
+
+h3 {
+    font-size: 18px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 100;
+    line-height: 15.4px;
+}
+
+
+
+section.workin-one {
+    padding: 100px 0;
+        background: url(../images/main-page/john-marcus.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+}
+
+footer.footer {
+    color: #ffffff;
+    background: #1b1b1b;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+.modal-close > span {
+    color: #1b1b1b;
+}
+.modal-close {
+    color: #ffffff;
+}
+button.close {
+    padding: 0;
+    background-color: #ffffff;
+    border: 0;
+    -webkit-appearance: none;
+}
+button#subscriptionButton {
+    background: #fff;
+    color: #1b1b1b;
+    border-radius: 0;
+    outline: 0;
+    display: block;
+    border: none;
+    width: 200px;
+    margin: 0 auto;
+}
+.popupsignup .modal-content {
+    background: #1b1b1b;
+    color: #ffffff;
+}
+input#email {
+    border-radius: 0;
+    padding: .7rem;
+}
+
+.header-vid {
+    overflow-x: hidden;
+}
+
+
+section {
+    padding: 100px 0;
+}
+
+
+blockquote.blockquote {
+    color: #fff;
+    font-size: 50px;
+}
+
+.max-400 {
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 2rem;
 }
