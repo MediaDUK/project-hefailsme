@@ -1,4 +1,5 @@
 'use strict';
+require('dotenv').config();
 var fs = require('fs');
 var path = require('path');
 var Sequelize = require('sequelize');
@@ -7,15 +8,33 @@ var env = process.env.NODE_ENV || 'development';
 var config = require(__dirname + '/../config/config.json')[env];
 var db = {};
 
+
 if (config.use_env_variable) {
+
+  console.log('CONNECTING TO REMOTE')
   var sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
-  var sequelize = new Sequelize(process.env.JAWSDB_DATABASE_NAME, process.env.JAWSDB_USERNAME, process.env.JAWSDB_PASSWORD, {
-    host: '127.0.0.1',
-    port: process.env.JAWSDB_PORT,
-    dialect: 'mysql'
-  });
+  console.log('CONNECTING TO LOCAL')
+  // var sequelize = new Sequelize(process.env.JAWSDB_DATABASE_NAME, 
+  //                               process.env.JAWSDB_USERNAME, process.env.JAWSDB_PASSWORD, {
+  //   host: '127.0.0.1',
+  //   port: process.env.JAWSDB_PORT,
+  //   dialect: 'mysql'
+  // });
+  // var sequelize = new Sequelize('jgy2mx5qwhjczyqk', 'lv2n8lbwqo7dqjok', 'azqw5bjnl3ukmgbs', {
+  //   host: 'localhost',
+  //   port: process.env.JAWSDB_PORT,
+  //   dialect: 'mysql',
+  // });
+
+
 }
+
+var sequelize = new Sequelize('mysql://lv2n8lbwqo7dqjok:drl5hm5kwxb9ikz7@i943okdfa47xqzpy.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/jgy2mx5qwhjczyqk');
+
+
+
+
 
 // console.log("GET TO KNOW THIS \n\n\n", sequelize)
 

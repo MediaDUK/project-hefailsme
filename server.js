@@ -8,7 +8,7 @@ const mysql = require('mysql2');
 const Sequelize = require('sequelize');
 const passport = require('passport')
 const session = require('express-session')
-const PORT = process.env.NODE_PORT || 8080
+const PORT = process.env.PORT || 8080
 const db = require('./models')
 
 
