@@ -27,10 +27,6 @@ $(document).ready(function () {
           var $email = $('#email')
           $email.val('')
           var $EmailModal = $('#emailSubscription')
-          // if (!$('#email_sign_up').hasClass('hidden')) {
-          //   hideError('#email_sign_up')
-
-          // }
           setTimeout(function () {
             // close modal after success from jawsbd post          
             $EmailModal.modal('hide')
@@ -40,12 +36,6 @@ $(document).ready(function () {
       })
       .fail(function (err) {
         console.log('ERROR ======================', err)
-        // console.log('ERROR:', err)
-        // console.log(err.responseText)
-        // if (err.responseText == 'Bad Request') {
-        //   showError('#email_sign_up')
-        // }
-
       })
   }
 
@@ -57,14 +47,6 @@ $(document).ready(function () {
     var $email = $('#email')
     var emailData = $email.val().trim() // string
     postEmail(emailData)
-    // if (emailData != '' || emailData != undefined) {
-    //   postEmail(emailData)
-    //   if (!$('#email_sign_up').hasClass('hidden')) {
-    //     hideError('#email_sign_up')
-    //   }
-    // } else {
-    //   showError('#email_sign_up')
-    // }
   });
 
   function showError(target_class) {
