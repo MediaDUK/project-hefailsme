@@ -17,13 +17,6 @@ if (config.use_env_variable) {
   console.log('CONNECTING TO LOCAL')
 }
 
-// var sequelize = new Sequelize('mysql://lv2n8lbwqo7dqjok:drl5hm5kwxb9ikz7@i943okdfa47xqzpy.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/jgy2mx5qwhjczyqk');
-
-
-
-
-
-// console.log("GET TO KNOW THIS \n\n\n", sequelize)
 
 fs
   .readdirSync(__dirname)
