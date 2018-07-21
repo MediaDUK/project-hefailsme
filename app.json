@@ -1,6 +1,6 @@
 {
   "name": "Project He Fails Me",
   "description": "A MySQL / Node band website",
-  "repository": "https://github.com/MediaDUK/project-hefailsme",
+  "repository": "https://github.com/hefailsme/project-hefailsme",
   "keywords": ["node", "express", "heroku", "MySQL"]
 }
