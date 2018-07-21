@@ -8,8 +8,9 @@ const mysql = require('mysql2');
 const Sequelize = require('sequelize');
 const passport = require('passport')
 const session = require('express-session')
-const PORT = process.env.PORT || 8080
 const db = require('./models')
+
+const PORT = process.env.PORT || 8080
 
 
 
@@ -55,6 +56,7 @@ require("./routes/html.js")(app, db);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
+
 db.sequelize.sync().then(function () {
   app.listen(PORT, function () {
     console.log("App listening on http://localhost:" + PORT);
