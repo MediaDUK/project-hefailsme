@@ -10,7 +10,7 @@
     "dev": "cross-env ./node_modules/nodemon/bin/nodemon.js server.js",
     "test": "node test.js",
     "start": "node server.js",
-    "author": "MediaDUK"
+    "author": "hefailsme"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
